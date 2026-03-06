@@ -11,29 +11,106 @@ import { useScroll, useTransform } from 'motion/react';
 
 const App: React.FC = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 100]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, -300]);
+  const y3 = useTransform(scrollY, [0, 1000], [0, 150]);
+  const y4 = useTransform(scrollY, [0, 1000], [0, -100]);
+  
+  const heroGlowOpacity = useTransform(scrollY, [0, 2000], [0.8, 0.2]);
+  const heroGlowScale = useTransform(scrollY, [0, 2000], [1, 1.5]);
+  const heroGlowY = useTransform(scrollY, [0, 2000], [0, 200]);
+
+  // Particle transforms
+  const p1 = useTransform(scrollY, [0, 1000], [0, -50]);
+  const p2 = useTransform(scrollY, [0, 1000], [0, -100]);
+  const p3 = useTransform(scrollY, [0, 1000], [0, -150]);
+  const p4 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const p5 = useTransform(scrollY, [0, 1000], [0, -250]);
+  const p6 = useTransform(scrollY, [0, 1000], [0, -300]);
+  const particleY = [p1, p2, p3, p4, p5, p6];
 
   return (
-    <div className="min-h-screen bg-matte-bg font-sans text-matte-ink antialiased selection:bg-matte-accent selection:text-white">
+    <div className="min-h-screen bg-matte-bg font-sans text-matte-ink antialiased selection:bg-matte-secondary selection:text-white">
       <ScrollProgress />
       <Nav />
 
-      <main>
-        {/* Hero Section */}
-        <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden px-6 pt-20">
-          <div className="absolute inset-0 z-0">
-            <motion.div 
-              style={{ y: y1 }}
-              className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-matte-accent/10 blur-[120px]" 
-            />
-            <motion.div 
-              style={{ y: y2 }}
-              className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-matte-secondary/10 blur-[120px]" 
-            />
-          </div>
+      {/* Persistent Background Elements */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0">
+          <motion.div 
+            style={{ y: y1 }}
+            className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-matte-accent/10 blur-[120px]" 
+          />
+          <motion.div 
+            style={{ y: y2 }}
+            className="absolute bottom-1/4 right-1/4 h-[500px] w-[500px] rounded-full bg-matte-secondary/10 blur-[130px]" 
+          />
+          <motion.div 
+            style={{ y: y3 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-matte-accent/5 blur-[100px]" 
+          />
+          <motion.div 
+            style={{ y: y4 }}
+            className="absolute top-1/3 right-1/3 h-48 w-48 rounded-full bg-matte-secondary/5 blur-[80px]" 
+          />
+        </div>
 
+        {/* Dynamic Hero Glow - Now Persistent */}
+        <motion.div
+          style={{ 
+            opacity: heroGlowOpacity,
+            scale: heroGlowScale,
+            y: heroGlowY,
+            x: '-50%',
+            left: '50%',
+            top: '30%'
+          }}
+          animate={{
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute -z-10 h-[100vh] w-[100vw] rounded-full bg-[radial-gradient(circle,rgba(148,163,152,0.3)_0%,rgba(212,163,115,0.2)_40%,rgba(148,163,152,0.05)_70%,transparent_100%)] blur-[120px]"
+        />
+
+        {/* Subtle Floating Particles - Now Persistent */}
+        <motion.div 
+          style={{ y: heroGlowY }}
+          className="absolute inset-0 -z-10"
+        >
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              style={{ 
+                left: `${10 + i * 12}%`,
+                top: `${20 + (i % 4) * 15}%`,
+                y: particleY[i % 6],
+                opacity: heroGlowOpacity 
+              }}
+              animate={{
+                x: [0, 30, 0],
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 6 + i,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.5
+              }}
+              className="absolute h-1.5 w-1.5 rounded-full bg-matte-accent/40 shadow-[0_0_10px_rgba(148,163,152,0.3)]"
+            />
+          ))}
+        </motion.div>
+      </div>
+
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="relative flex min-h-[90vh] items-center justify-center px-6 pt-20">
           <div className="relative z-10 mx-auto max-w-4xl text-center">
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,7 +173,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Philosophy Section */}
-        <section id="philosophy" className="relative overflow-hidden bg-white py-32">
+        <section id="philosophy" className="relative overflow-hidden py-32">
           <div className="absolute top-0 right-0 -mr-24 -mt-24 h-96 w-96 rounded-full bg-matte-accent/5 blur-[100px]" />
           <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
             <div className="grid gap-24 lg:grid-cols-2">
@@ -109,12 +186,12 @@ const App: React.FC = () => {
                 </div>
 
                 <div className="grid gap-8 sm:grid-cols-2">
-                  <div className="space-y-4 rounded-2xl bg-matte-bg p-8">
+                  <div className="space-y-4 rounded-2xl border border-matte-accent/10 bg-white/40 p-8 backdrop-blur-md">
                     <Target className="text-matte-accent" size={24} />
                     <h4 className="font-serif text-xl text-matte-ink">Vision</h4>
                     <p className="text-sm text-matte-ink/60">To set new benchmarks for hospitality in Southeast Asia through innovation and excellence.</p>
                   </div>
-                  <div className="space-y-4 rounded-2xl bg-matte-bg p-8">
+                  <div className="space-y-4 rounded-2xl border border-matte-accent/10 bg-white/40 p-8 backdrop-blur-md">
                     <Users className="text-matte-accent" size={24} />
                     <h4 className="font-serif text-xl text-matte-ink">Community</h4>
                     <p className="text-sm text-matte-ink/60">Building lasting relationships with our guests, staff, and local partners in every location.</p>
@@ -134,7 +211,7 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="relative aspect-video overflow-hidden rounded-3xl bg-matte-bg">
+                <div className="relative aspect-video overflow-hidden rounded-3xl border border-matte-accent/10 bg-white/40 backdrop-blur-md">
                   <img 
                     src="https://picsum.photos/seed/philosophy/1200/800" 
                     alt="Hospitality atmosphere" 

@@ -46,7 +46,7 @@ export const ContactSection: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl border border-matte-accent/10 bg-white p-8 shadow-xl md:p-12"
+              className="rounded-3xl border border-matte-accent/10 bg-white/40 p-8 shadow-xl backdrop-blur-md md:p-12"
             >
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-6">

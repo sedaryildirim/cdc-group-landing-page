@@ -21,11 +21,11 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
         delay: index * 0.15,
         ease: [0.21, 1, 0.36, 1] 
       }}
-      className={`group relative overflow-hidden rounded-2xl bg-white p-6 transition-all duration-500 ${
+      className={`group relative overflow-hidden rounded-2xl border border-matte-accent/10 bg-white/40 p-6 backdrop-blur-md transition-all duration-500 ${
         isUpcoming ? 'opacity-70 grayscale' : 'hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-2'
       }`}
     >
-      <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl bg-matte-bg p-12">
+      <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl bg-matte-accent/5 p-12">
         {brand.thumbnail && (
           <img
             src={brand.thumbnail}
