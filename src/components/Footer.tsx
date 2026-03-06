@@ -17,23 +17,23 @@ export const Footer: React.FC = () => {
           <div className="space-y-6">
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30">Navigation</h4>
             <nav className="flex flex-col gap-4">
-              <a href="#portfolio" className="text-sm text-white/60 transition-colors hover:text-white">Portfolio</a>
-              <a href="#philosophy" className="text-sm text-white/60 transition-colors hover:text-white">Philosophy</a>
-              <a href="#leadership" className="text-sm text-white/60 transition-colors hover:text-white">Leadership</a>
-              <a href="#contact" className="text-sm text-white/60 transition-colors hover:text-white">Contact</a>
+              <a href="#portfolio" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Portfolio</a>
+              <a href="#philosophy" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Philosophy</a>
+              <a href="#leadership" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Leadership</a>
+              <a href="#contact" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Contact</a>
             </nav>
           </div>
 
           <div className="space-y-6">
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30">Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="LinkedIn">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary outline-none focus-visible:ring-2 focus-visible:ring-matte-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="Instagram">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary outline-none focus-visible:ring-2 focus-visible:ring-matte-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="Facebook">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary outline-none focus-visible:ring-2 focus-visible:ring-matte-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
             </div>
@@ -53,8 +53,8 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} CDC Group. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <a href="#" className="text-[10px] tracking-widest uppercase text-white/30 hover:text-white">Privacy Policy</a>
-            <a href="#" className="text-[10px] tracking-widest uppercase text-white/30 hover:text-white">Terms of Service</a>
+            <a href="#" className="text-[10px] tracking-widest uppercase text-white/30 hover:text-white outline-none focus-visible:text-white focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm">Privacy Policy</a>
+            <a href="#" className="text-[10px] tracking-widest uppercase text-white/30 hover:text-white outline-none focus-visible:text-white focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm">Terms of Service</a>
           </div>
         </div>
       </div>

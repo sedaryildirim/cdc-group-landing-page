@@ -51,33 +51,39 @@ export const ContactSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-6">
                   <div className="group relative">
+                    <label htmlFor="contact-name" className="sr-only">Your Name</label>
                     <input 
+                      id="contact-name"
                       type="text" 
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       placeholder="Your Name"
-                      className="w-full border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent"
+                      className="w-full border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent focus-visible:border-matte-accent"
                     />
                   </div>
                   <div className="group relative">
+                    <label htmlFor="contact-email" className="sr-only">Email Address</label>
                     <input 
+                      id="contact-email"
                       type="email" 
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       placeholder="Email Address"
-                      className="w-full border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent"
+                      className="w-full border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent focus-visible:border-matte-accent"
                     />
                   </div>
                   <div className="group relative">
+                    <label htmlFor="contact-message" className="sr-only">How can we help?</label>
                     <textarea 
+                      id="contact-message"
                       rows={4} 
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       placeholder="How can we help?"
-                      className="w-full resize-none border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent"
+                      className="w-full resize-none border-b border-matte-ink/10 py-4 text-sm outline-none transition-colors focus:border-matte-accent focus-visible:border-matte-accent"
                     ></textarea>
                   </div>
                 </div>
@@ -85,7 +91,7 @@ export const ContactSection: React.FC = () => {
                 <button 
                   type="submit"
                   disabled={status !== 'idle'}
-                  className="group flex w-full items-center justify-center gap-3 rounded-full bg-matte-ink py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)] disabled:opacity-50"
+                  className="group flex w-full items-center justify-center gap-3 rounded-full bg-matte-ink py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)] disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2"
                 >
                   {status === 'idle' && (
                     <>

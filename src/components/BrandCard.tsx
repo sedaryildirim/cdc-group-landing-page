@@ -40,7 +40,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             href={brand.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 outline-none focus-visible:opacity-100 focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-matte-accent rounded-xl"
             aria-label={`Visit ${brand.name} website`}
           >
             <motion.div 
@@ -67,8 +67,10 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             {brand.facebookUrl && (
               <a 
                 href={brand.facebookUrl} 
-                className="text-matte-ink/40 transition-colors hover:text-matte-secondary"
-                aria-label={`${brand.name} Facebook`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-matte-ink/40 transition-colors hover:text-matte-secondary outline-none focus-visible:text-matte-secondary focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-md p-1"
+                aria-label={`Visit ${brand.name} Facebook page`}
               >
                 <Facebook size={18} />
               </a>
@@ -76,8 +78,10 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             {brand.instagramUrl && (
               <a 
                 href={brand.instagramUrl} 
-                className="text-matte-ink/40 transition-colors hover:text-matte-secondary"
-                aria-label={`${brand.name} Instagram`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-matte-ink/40 transition-colors hover:text-matte-secondary outline-none focus-visible:text-matte-secondary focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-md p-1"
+                aria-label={`Visit ${brand.name} Instagram profile`}
               >
                 <Instagram size={18} />
               </a>

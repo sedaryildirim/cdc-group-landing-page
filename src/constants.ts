@@ -12,6 +12,7 @@ export interface Owner {
   name: string;
   role: string;
   background: string;
+  image?: string;
 }
 
 export const BRANDS: Brand[] = [
@@ -47,12 +48,14 @@ export const OWNERS: Owner[] = [
   {
     name: "Andrew Grindlay",
     role: "Operations Director",
-    background: "With over 20 years in international hospitality, Andrew leads the operational excellence and brand development of CDC Group."
+    background: "With over 20 years in international hospitality, Andrew leads the operational excellence and brand development of CDC Group.",
+    image: "/images/andrew-portrait.png"
   },
   {
     name: "Helene Pavie",
     role: "Financial CEO",
-    background: "A strategic leader with a deep background in financial management, Helene ensures the group's sustainable growth and fiscal integrity."
+    background: "A strategic leader with a deep background in financial management, Helene ensures the group's sustainable growth and fiscal integrity.",
+    image: "/images/helene-portrait.png"
   },
   {
     name: "Troy Trigwell",

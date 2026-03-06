@@ -26,7 +26,11 @@ export const Nav: React.FC = () => {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
-        <a href="#" className="font-serif text-2xl tracking-tighter text-matte-ink">
+        <a 
+          href="#" 
+          className="font-serif text-2xl tracking-tighter text-matte-ink outline-none focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-lg"
+          aria-label="CDC Group Home"
+        >
           CDC<span className="text-matte-accent">.</span>
         </a>
 
@@ -36,7 +40,7 @@ export const Nav: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`text-xs font-bold tracking-widest uppercase transition-all ${
+              className={`text-xs font-bold tracking-widest uppercase transition-all outline-none focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-full ${
                 link.name === 'Inquiry' 
                   ? 'rounded-full bg-matte-secondary/10 px-6 py-2.5 text-matte-secondary hover:bg-matte-secondary hover:text-white' 
                   : 'text-matte-ink/60 hover:text-matte-accent'
@@ -49,7 +53,7 @@ export const Nav: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="text-matte-ink md:hidden"
+          className="text-matte-ink md:hidden outline-none focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-lg p-1"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}

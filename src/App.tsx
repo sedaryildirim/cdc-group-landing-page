@@ -133,14 +133,14 @@ const App: React.FC = () => {
               <div className="flex flex-col items-center justify-center gap-6 pt-8 sm:flex-row">
                 <a 
                   href="#portfolio" 
-                  className="group flex items-center gap-3 rounded-full bg-matte-ink px-10 py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)]"
+                  className="group flex items-center gap-3 rounded-full bg-matte-ink px-10 py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)] outline-none focus-visible:ring-2 focus-visible:ring-matte-accent focus-visible:ring-offset-2"
                 >
                   View Portfolio
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </a>
                 <a 
                   href="#philosophy" 
-                  className="text-xs font-bold tracking-widest uppercase text-matte-ink/40 transition-colors hover:text-matte-ink"
+                  className="text-xs font-bold tracking-widest uppercase text-matte-ink/40 transition-colors hover:text-matte-ink outline-none focus-visible:text-matte-ink focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-full px-4 py-2"
                 >
                   Our Philosophy
                 </a>
@@ -252,7 +252,7 @@ const App: React.FC = () => {
                 >
                   <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-matte-ink/5">
                     <img 
-                      src={`https://picsum.photos/seed/owner-${index}/600/800`} 
+                      src={owner.image || `https://picsum.photos/seed/owner-${index}/600/800`} 
                       alt={owner.name} 
                       className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
                       loading="lazy"
