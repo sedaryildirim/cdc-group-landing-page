@@ -5,15 +5,16 @@
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   
-  --color-matte-bg: #F8F7F4;
-  --color-matte-ink: #1A1A1A;
-  --color-matte-accent: #8C7E6A;
-  --color-matte-border: rgba(26, 26, 26, 0.1);
+  --color-matte-bg: #FDFCFB;
+  --color-matte-ink: #2C2C2C;
+  --color-matte-accent: #94A398; /* Muted Sage */
+  --color-matte-secondary: #D4A373; /* Soft Terracotta/Ochre */
+  --color-matte-border: rgba(44, 44, 44, 0.08);
 }
 
 @layer base {
   body {
-    @apply bg-matte-bg text-matte-ink font-sans selection:bg-matte-accent selection:text-white antialiased;
+    @apply bg-matte-bg text-matte-ink font-sans selection:bg-matte-secondary selection:text-white antialiased;
   }
 }
 

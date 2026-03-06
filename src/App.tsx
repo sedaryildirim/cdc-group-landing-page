@@ -25,11 +25,11 @@ const App: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <motion.div 
               style={{ y: y1 }}
-              className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-matte-accent/5 blur-[120px]" 
+              className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-matte-accent/10 blur-[120px]" 
             />
             <motion.div 
               style={{ y: y2 }}
-              className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-matte-ink/5 blur-[120px]" 
+              className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-matte-secondary/10 blur-[120px]" 
             />
           </div>
 
@@ -40,9 +40,9 @@ const App: React.FC = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-matte-ink/5 bg-white/50 px-4 py-1.5 backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-matte-accent" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-matte-ink/40">Bangkok Hospitality Group</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-matte-accent/10 bg-matte-accent/5 px-4 py-1.5 backdrop-blur-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-matte-accent animate-pulse" />
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-matte-accent">Bangkok Hospitality Group</span>
               </div>
               
               <h1 className="font-serif text-6xl leading-[1.1] tracking-tight text-matte-ink md:text-8xl">
@@ -56,7 +56,7 @@ const App: React.FC = () => {
               <div className="flex flex-col items-center justify-center gap-6 pt-8 sm:flex-row">
                 <a 
                   href="#portfolio" 
-                  className="group flex items-center gap-3 rounded-full bg-matte-ink px-10 py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-accent hover:shadow-xl"
+                  className="group flex items-center gap-3 rounded-full bg-matte-ink px-10 py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)]"
                 >
                   View Portfolio
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
@@ -83,7 +83,7 @@ const App: React.FC = () => {
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-5xl font-light tracking-tighter text-matte-ink/10 md:text-7xl">01</span>
+                <span className="text-5xl font-light tracking-tighter text-matte-accent/20 md:text-7xl">01</span>
               </div>
             </div>
 
@@ -96,8 +96,9 @@ const App: React.FC = () => {
         </section>
 
         {/* Philosophy Section */}
-        <section id="philosophy" className="bg-white py-32">
-          <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <section id="philosophy" className="relative overflow-hidden bg-white py-32">
+          <div className="absolute top-0 right-0 -mr-24 -mt-24 h-96 w-96 rounded-full bg-matte-accent/5 blur-[100px]" />
+          <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
             <div className="grid gap-24 lg:grid-cols-2">
               <div className="space-y-12">
                 <div className="space-y-6">
@@ -158,7 +159,7 @@ const App: React.FC = () => {
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-5xl font-light tracking-tighter text-matte-ink/10 md:text-7xl">02</span>
+                <span className="text-5xl font-light tracking-tighter text-matte-accent/20 md:text-7xl">02</span>
               </div>
             </div>
 

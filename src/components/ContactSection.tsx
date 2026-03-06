@@ -46,7 +46,7 @@ export const ContactSection: React.FC = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-3xl bg-white p-8 shadow-xl md:p-12"
+              className="rounded-3xl border border-matte-accent/10 bg-white p-8 shadow-xl md:p-12"
             >
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="space-y-6">
@@ -85,7 +85,7 @@ export const ContactSection: React.FC = () => {
                 <button 
                   type="submit"
                   disabled={status !== 'idle'}
-                  className="group flex w-full items-center justify-center gap-3 rounded-full bg-matte-ink py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-accent disabled:opacity-50"
+                  className="group flex w-full items-center justify-center gap-3 rounded-full bg-matte-ink py-5 text-xs font-bold tracking-widest uppercase text-white transition-all hover:bg-matte-secondary hover:shadow-[0_20px_40px_rgba(212,163,115,0.2)] disabled:opacity-50"
                 >
                   {status === 'idle' && (
                     <>

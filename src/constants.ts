@@ -20,24 +20,24 @@ export const BRANDS: Brand[] = [
     description: "Burger BBQ Restaurant. A vibrant destination for smokehouse enthusiasts and craft burger lovers in the heart of the city.",
     status: "live",
     url: "https://mojosthailand.netlify.app/",
-    thumbnail: "https://picsum.photos/seed/mojos/800/600",
-    facebookUrl: "https://facebook.com",
-    instagramUrl: "https://instagram.com"
+    thumbnail: "/images/Mojos-LogoPaper.png",
+    facebookUrl: "https://www.facebook.com/mojos.th/",
+    instagramUrl: "https://www.instagram.com/mojos.th/"
   },
   {
     name: "Kaif",
     description: "Beach Bar and Restaurant. Experience the ultimate island lifestyle with sophisticated dining and sunset views on the shores of Koh Phangan.",
     status: "live",
     url: "https://kaifkohphangan.netlify.app/",
-    thumbnail: "https://picsum.photos/seed/kaif/800/600",
-    facebookUrl: "https://facebook.com",
-    instagramUrl: "https://instagram.com"
+    thumbnail: "/images/KAIF-LOGO.png",
+    facebookUrl: "https://www.facebook.com/kaifphangan/",
+    instagramUrl: "https://www.instagram.com/kaifphangan/"
   },
   {
     name: "Ember",
     description: "Charcoal Chicken. Our upcoming concept focusing on the primal art of fire-roasting, bringing elevated comfort food to Bangkok.",
     status: "upcoming",
-    thumbnail: "https://picsum.photos/seed/ember/800/600",
+    thumbnail: "/images/ember-logo.png",
     facebookUrl: "https://facebook.com",
     instagramUrl: "https://instagram.com"
   }

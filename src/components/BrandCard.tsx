@@ -25,12 +25,12 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
         isUpcoming ? 'opacity-70 grayscale' : 'hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-2'
       }`}
     >
-      <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl bg-matte-bg">
+      <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-xl bg-matte-bg p-12">
         {brand.thumbnail && (
           <img
             src={brand.thumbnail}
-            alt={`${brand.name} restaurant preview`}
-            className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+            alt={`${brand.name} logo`}
+            className="h-full w-full object-contain transition-transform duration-1000 group-hover:scale-110"
             loading="lazy"
             referrerPolicy="no-referrer"
           />
@@ -45,15 +45,15 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
           >
             <motion.div 
               whileHover={{ scale: 1.1 }}
-              className="rounded-full bg-white/90 p-3 text-matte-ink backdrop-blur-sm"
+              className="rounded-full bg-matte-secondary p-3 text-white shadow-lg"
             >
               <ExternalLink size={20} />
             </motion.div>
           </a>
         )}
         {isUpcoming && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/5">
-            <span className="rounded-full bg-white/90 px-4 py-1.5 text-[10px] font-semibold tracking-widest uppercase text-matte-ink backdrop-blur-sm">
+          <div className="absolute inset-0 flex items-end justify-center pb-6 bg-black/5">
+            <span className="rounded-full bg-matte-accent/10 px-4 py-1.5 text-[10px] font-semibold tracking-widest uppercase text-matte-accent backdrop-blur-sm shadow-sm border border-matte-accent/20">
               Coming Soon
             </span>
           </div>
@@ -67,7 +67,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             {brand.facebookUrl && (
               <a 
                 href={brand.facebookUrl} 
-                className="text-matte-ink/40 transition-colors hover:text-matte-accent"
+                className="text-matte-ink/40 transition-colors hover:text-matte-secondary"
                 aria-label={`${brand.name} Facebook`}
               >
                 <Facebook size={18} />
@@ -76,7 +76,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             {brand.instagramUrl && (
               <a 
                 href={brand.instagramUrl} 
-                className="text-matte-ink/40 transition-colors hover:text-matte-accent"
+                className="text-matte-ink/40 transition-colors hover:text-matte-secondary"
                 aria-label={`${brand.name} Instagram`}
               >
                 <Instagram size={18} />

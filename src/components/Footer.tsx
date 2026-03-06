@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-matte-ink py-24 text-white">
+    <footer className="relative border-t border-matte-accent/10 bg-matte-ink py-24 text-white">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
@@ -27,13 +27,13 @@ export const Footer: React.FC = () => {
           <div className="space-y-6">
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30">Connect</h4>
             <div className="flex gap-4">
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-colors hover:bg-white/5" aria-label="LinkedIn">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-colors hover:bg-white/5" aria-label="Instagram">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="rounded-full border border-white/10 p-3 transition-colors hover:bg-white/5" aria-label="Facebook">
+              <a href="#" className="rounded-full border border-white/10 p-3 transition-all hover:border-matte-secondary hover:bg-matte-secondary/10 hover:text-matte-secondary" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
             </div>

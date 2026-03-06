@@ -36,7 +36,11 @@ export const Nav: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-medium tracking-widest uppercase text-matte-ink/60 transition-colors hover:text-matte-accent"
+              className={`text-xs font-bold tracking-widest uppercase transition-all ${
+                link.name === 'Inquiry' 
+                  ? 'rounded-full bg-matte-secondary/10 px-6 py-2.5 text-matte-secondary hover:bg-matte-secondary hover:text-white' 
+                  : 'text-matte-ink/60 hover:text-matte-accent'
+              }`}
             >
               {link.name}
             </a>
