@@ -165,6 +165,32 @@ const App: React.FC = () => {
           </div>
         </section>
 
+        {/* About Section */}
+        <section id="about" className="py-32 bg-white/30 backdrop-blur-sm">
+          <div className="mx-auto max-w-4xl px-6 md:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8 text-center"
+            >
+              <div className="flex flex-col items-center space-y-4">
+                <h2 className="font-serif text-5xl tracking-tight text-matte-ink">Our Story<span className="text-matte-accent">.</span></h2>
+                <div className="h-1 w-20 bg-matte-accent/20" />
+              </div>
+              <div className="space-y-6 text-lg leading-relaxed text-matte-ink/70">
+                <p>
+                  Rooted in the serene landscapes of Koh Phangan and Koh Samui, CDC is a hospitality group defined by its soul-stirring locations and a steadfast commitment to genuine guest connection. By blending local charm with modern excellence, CDC has cultivated a reputation for creating spaces where travelers feel truly at home.
+                </p>
+                <p>
+                  The group is currently proud to manage its signature brands, <span className="font-medium text-matte-ink">Mojos</span> and <span className="font-medium text-matte-ink">Kaif</span>, each offering a unique window into island life. As part of a bold new chapter, CDC is preparing to expand its horizon with the launch of <span className="font-medium text-matte-ink">Ember</span>. This vision culminates in 2027, as the group brings its signature warmth and curated hospitality to the vibrant energy of Bangkok.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Brands Section */}
         <section id="portfolio" className="py-32">
           <div className="mx-auto max-w-7xl px-6 md:px-12">

@@ -21,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onPrivacyClick }) => {
           <div className="space-y-6">
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30">Navigation</h4>
             <nav className="flex flex-col gap-4">
+              <a href="#about" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">About</a>
               <a href="#portfolio" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Portfolio</a>
               <a href="#leadership" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Leadership</a>
             </nav>

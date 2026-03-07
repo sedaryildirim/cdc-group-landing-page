@@ -13,6 +13,7 @@ export const Nav: React.FC = () => {
   }, []);
 
   const navLinks = [
+    { name: 'About', href: '#about' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Leadership', href: '#leadership' },
   ];
