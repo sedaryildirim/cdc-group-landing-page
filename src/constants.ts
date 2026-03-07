@@ -5,6 +5,7 @@ export interface Brand {
   status: 'live' | 'upcoming';
   url?: string;
   thumbnail?: string;
+  invertLogo?: boolean;
   facebookUrl?: string;
   instagramUrl?: string;
 }
@@ -40,9 +41,11 @@ export const BRANDS: Brand[] = [
   {
     name: "Ember",
     tagline: "Primal Art, Elevated Comfort.",
-    description: "Our upcoming concept focusing on the primal art of fire-roasting. Ember brings the warmth of charcoal-grilled excellence to Bangkok, redefining comfort food through the lens of fire and smoke.",
-    status: "upcoming",
+    description: "Ember brings the warmth of charcoal-grilled excellence to Bangkok, redefining comfort food through the primal art of fire-roasting and smoke.",
+    status: "live",
+    url: "https://ember-charcoal-chicken.pages.dev/",
     thumbnail: "/images/ember-logo.png",
+    invertLogo: true,
     facebookUrl: "https://facebook.com",
     instagramUrl: "https://instagram.com"
   }

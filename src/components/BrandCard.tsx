@@ -30,7 +30,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
           <img
             src={brand.thumbnail}
             alt={`${brand.name} logo`}
-            className="h-full w-full object-contain transition-transform duration-1000 group-hover:scale-110"
+            className={`h-full w-full object-contain transition-transform duration-1000 group-hover:scale-110 ${brand.invertLogo ? 'invert' : ''}`}
             loading="lazy"
             referrerPolicy="no-referrer"
           />
