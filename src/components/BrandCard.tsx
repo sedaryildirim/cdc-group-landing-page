@@ -88,7 +88,14 @@ export const BrandCard: React.FC<BrandCardProps> = ({ brand, index }) => {
             )}
           </div>
         </div>
-        <p className="text-sm leading-relaxed text-matte-ink/60">{brand.description}</p>
+        <div className="space-y-2">
+          {brand.tagline && (
+            <p className="text-[10px] font-bold tracking-widest uppercase text-matte-accent">
+              {brand.tagline}
+            </p>
+          )}
+          <p className="text-sm leading-relaxed text-matte-ink/60">{brand.description}</p>
+        </div>
       </div>
     </motion.div>
   );

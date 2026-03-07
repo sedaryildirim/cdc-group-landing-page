@@ -14,9 +14,7 @@ export const Nav: React.FC = () => {
 
   const navLinks = [
     { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Philosophy', href: '#philosophy' },
     { name: 'Leadership', href: '#leadership' },
-    { name: 'Inquiry', href: '#contact' },
   ];
 
   return (

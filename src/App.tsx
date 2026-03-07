@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Users, Target, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Nav } from './components/Nav';
 import { BrandCard } from './components/BrandCard';
-import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ScrollProgress } from './components/ScrollProgress';
 import { BRANDS, OWNERS } from './constants';
@@ -138,12 +137,6 @@ const App: React.FC = () => {
                   View Portfolio
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </a>
-                <a 
-                  href="#philosophy" 
-                  className="text-xs font-bold tracking-widest uppercase text-matte-ink/40 transition-colors hover:text-matte-ink outline-none focus-visible:text-matte-ink focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 rounded-full px-4 py-2"
-                >
-                  Our Philosophy
-                </a>
               </div>
             </motion.div>
           </div>
@@ -168,59 +161,6 @@ const App: React.FC = () => {
               {BRANDS.map((brand, index) => (
                 <BrandCard key={brand.name} brand={brand} index={index} />
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Philosophy Section */}
-        <section id="philosophy" className="relative overflow-hidden py-32">
-          <div className="absolute top-0 right-0 -mr-24 -mt-24 h-96 w-96 rounded-full bg-matte-accent/5 blur-[100px]" />
-          <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-            <div className="grid gap-24 lg:grid-cols-2">
-              <div className="space-y-12">
-                <div className="space-y-6">
-                  <h2 className="font-serif text-5xl tracking-tight text-matte-ink">Our Philosophy<span className="text-matte-accent">.</span></h2>
-                  <p className="text-xl leading-relaxed text-matte-ink/70">
-                    We believe hospitality is an art form. It's the intersection of primal techniques, modern aesthetics, and genuine human connection.
-                  </p>
-                </div>
-
-                <div className="grid gap-8 sm:grid-cols-2">
-                  <div className="space-y-4 rounded-2xl border border-matte-accent/10 bg-white/40 p-8 backdrop-blur-md">
-                    <Target className="text-matte-accent" size={24} />
-                    <h4 className="font-serif text-xl text-matte-ink">Vision</h4>
-                    <p className="text-sm text-matte-ink/60">To set new benchmarks for hospitality in Southeast Asia through innovation and excellence.</p>
-                  </div>
-                  <div className="space-y-4 rounded-2xl border border-matte-accent/10 bg-white/40 p-8 backdrop-blur-md">
-                    <Users className="text-matte-accent" size={24} />
-                    <h4 className="font-serif text-xl text-matte-ink">Community</h4>
-                    <p className="text-sm text-matte-ink/60">Building lasting relationships with our guests, staff, and local partners in every location.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-center space-y-16">
-                <div className="flex items-start gap-8">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-matte-accent/10 text-matte-accent">
-                    <MapPin size={32} />
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="text-[10px] font-bold tracking-widest uppercase text-matte-ink/30">Locations</h4>
-                    <p className="font-serif text-4xl text-matte-ink">BKK, SAMUI, PHANGAN</p>
-                    <p className="text-sm text-matte-ink/40 italic">Expanding across Thailand's most vibrant destinations.</p>
-                  </div>
-                </div>
-
-                <div className="relative aspect-video overflow-hidden rounded-3xl border border-matte-accent/10 bg-white/40 backdrop-blur-md">
-                  <img 
-                    src="https://picsum.photos/seed/philosophy/1200/800" 
-                    alt="Hospitality atmosphere" 
-                    className="h-full w-full object-cover opacity-80"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -269,8 +209,6 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
-
-        <ContactSection />
       </main>
 
       <Footer />

@@ -1,5 +1,6 @@
 export interface Brand {
   name: string;
+  tagline?: string;
   description: string;
   status: 'live' | 'upcoming';
   url?: string;
@@ -18,7 +19,8 @@ export interface Owner {
 export const BRANDS: Brand[] = [
   {
     name: "Mojos",
-    description: "Burger BBQ Restaurant. A vibrant destination for smokehouse enthusiasts and craft burger lovers in the heart of the city.",
+    tagline: "Smoke, Fire, and the Perfect Bite.",
+    description: "A vibrant destination for smokehouse enthusiasts and craft burger lovers. We blend traditional BBQ techniques with modern flavors to create an unforgettable urban dining experience.",
     status: "live",
     url: "https://mojosthailand.netlify.app/",
     thumbnail: "/images/Mojos-LogoPaper.png",
@@ -27,7 +29,8 @@ export const BRANDS: Brand[] = [
   },
   {
     name: "Kaif",
-    description: "Beach Bar and Restaurant. Experience the ultimate island lifestyle with sophisticated dining and sunset views on the shores of Koh Phangan.",
+    tagline: "Island Soul, Sophisticated Flavors.",
+    description: "Experience the ultimate island lifestyle on the shores of Koh Phangan. From sunset cocktails to refined beachfront dining, Kaif is where sophisticated relaxation meets the rhythm of the sea.",
     status: "live",
     url: "https://kaifkohphangan.netlify.app/",
     thumbnail: "/images/KAIF-LOGO.png",
@@ -36,7 +39,8 @@ export const BRANDS: Brand[] = [
   },
   {
     name: "Ember",
-    description: "Charcoal Chicken. Our upcoming concept focusing on the primal art of fire-roasting, bringing elevated comfort food to Bangkok.",
+    tagline: "Primal Art, Elevated Comfort.",
+    description: "Our upcoming concept focusing on the primal art of fire-roasting. Ember brings the warmth of charcoal-grilled excellence to Bangkok, redefining comfort food through the lens of fire and smoke.",
     status: "upcoming",
     thumbnail: "/images/ember-logo.png",
     facebookUrl: "https://facebook.com",

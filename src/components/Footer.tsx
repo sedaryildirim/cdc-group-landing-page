@@ -18,9 +18,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30">Navigation</h4>
             <nav className="flex flex-col gap-4">
               <a href="#portfolio" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Portfolio</a>
-              <a href="#philosophy" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Philosophy</a>
               <a href="#leadership" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Leadership</a>
-              <a href="#contact" className="text-sm text-white/60 transition-colors hover:text-white outline-none focus-visible:text-matte-accent focus-visible:ring-1 focus-visible:ring-matte-accent focus-visible:ring-offset-2 focus-visible:ring-offset-matte-ink rounded-sm w-fit">Contact</a>
             </nav>
           </div>
 
