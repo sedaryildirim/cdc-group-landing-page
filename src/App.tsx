@@ -5,19 +5,42 @@ import { Nav } from './components/Nav';
 import { BrandCard } from './components/BrandCard';
 import { Footer } from './components/Footer';
 import { ScrollProgress } from './components/ScrollProgress';
+import { PrivacyModal } from './components/PrivacyModal';
 import { BRANDS, OWNERS } from './constants';
-import { useScroll, useTransform } from 'motion/react';
+import { useScroll, useTransform, useMotionValue, useSpring } from 'motion/react';
 
 const App: React.FC = () => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = React.useState(false);
   const { scrollY } = useScroll();
+  
+  // Mouse tracking for background glow
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springConfig = { damping: 40, stiffness: 120 };
+  const mouseXSpring = useSpring(mouseX, springConfig);
+  const mouseYSpring = useSpring(mouseY, springConfig);
+
+  React.useEffect(() => {
+    // Initial center position
+    mouseX.set(window.innerWidth / 2);
+    mouseY.set(window.innerHeight / 3);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
   const y2 = useTransform(scrollY, [0, 1000], [0, -300]);
   const y3 = useTransform(scrollY, [0, 1000], [0, 150]);
   const y4 = useTransform(scrollY, [0, 1000], [0, -100]);
   
-  const heroGlowOpacity = useTransform(scrollY, [0, 2000], [0.8, 0.2]);
-  const heroGlowScale = useTransform(scrollY, [0, 2000], [1, 1.5]);
-  const heroGlowY = useTransform(scrollY, [0, 2000], [0, 200]);
+  const heroGlowOpacity = useTransform(scrollY, [0, 2000], [1, 0.4]);
+  const heroGlowScale = useTransform(scrollY, [0, 2000], [1, 1.8]);
+  const heroGlowY = useTransform(scrollY, [0, 2000], [0, 400]);
 
   // Particle transforms
   const p1 = useTransform(scrollY, [0, 1000], [0, -50]);
@@ -54,15 +77,15 @@ const App: React.FC = () => {
           />
         </div>
 
-        {/* Dynamic Hero Glow - Now Persistent */}
+        {/* Dynamic Hero Glow - Now follows mouse on desktop */}
         <motion.div
           style={{ 
             opacity: heroGlowOpacity,
             scale: heroGlowScale,
-            y: heroGlowY,
-            x: '-50%',
-            left: '50%',
-            top: '30%'
+            left: mouseXSpring,
+            top: mouseYSpring,
+            translateX: '-50%',
+            translateY: '-50%',
           }}
           animate={{
             scale: [1, 1.05, 1],
@@ -72,7 +95,7 @@ const App: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -z-10 h-[100vh] w-[100vw] rounded-full bg-[radial-gradient(circle,rgba(148,163,152,0.3)_0%,rgba(212,163,115,0.2)_40%,rgba(148,163,152,0.05)_70%,transparent_100%)] blur-[120px]"
+          className="fixed -z-10 h-[60vh] w-[60vw] rounded-full bg-[radial-gradient(circle,rgba(148,163,152,0.5)_0%,rgba(212,163,115,0.4)_40%,rgba(148,163,152,0.15)_70%,transparent_100%)] blur-[100px] pointer-events-none"
         />
 
         {/* Subtle Floating Particles - Now Persistent */}
@@ -192,11 +215,15 @@ const App: React.FC = () => {
                 >
                   <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-matte-ink/5">
                     <img 
-                      src={owner.image || `https://picsum.photos/seed/owner-${index}/600/800`} 
+                      src={owner.image || `https://picsum.photos/seed/owner-${owner.name}/600/800`} 
                       alt={owner.name} 
                       className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
                       loading="lazy"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://picsum.photos/seed/owner-${owner.name}/600/800`;
+                      }}
                     />
                   </div>
                   <div className="space-y-2">
@@ -211,7 +238,8 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      <Footer />
+      <Footer onPrivacyClick={() => setIsPrivacyOpen(true)} />
+      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
     </div>
   );
 };

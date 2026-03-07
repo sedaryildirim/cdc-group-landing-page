@@ -22,7 +22,7 @@ export const BRANDS: Brand[] = [
     tagline: "Smoke, Fire, and the Perfect Bite.",
     description: "A vibrant destination for smokehouse enthusiasts and craft burger lovers. We blend traditional BBQ techniques with modern flavors to create an unforgettable urban dining experience.",
     status: "live",
-    url: "https://mojosthailand.netlify.app/",
+    url: "https://mojos-bbq-website.pages.dev/",
     thumbnail: "/images/Mojos-LogoPaper.png",
     facebookUrl: "https://www.facebook.com/mojos.th/",
     instagramUrl: "https://www.instagram.com/mojos.th/"
@@ -32,7 +32,7 @@ export const BRANDS: Brand[] = [
     tagline: "Island Soul, Sophisticated Flavors.",
     description: "Experience the ultimate island lifestyle on the shores of Koh Phangan. From sunset cocktails to refined beachfront dining, Kaif is where sophisticated relaxation meets the rhythm of the sea.",
     status: "live",
-    url: "https://kaifkohphangan.netlify.app/",
+    url: "https://kaif-koh-phangan.pages.dev/",
     thumbnail: "/images/KAIF-LOGO.png",
     facebookUrl: "https://www.facebook.com/kaifphangan/",
     instagramUrl: "https://www.instagram.com/kaifphangan/"
@@ -51,7 +51,7 @@ export const BRANDS: Brand[] = [
 export const OWNERS: Owner[] = [
   {
     name: "Andrew Grindlay",
-    role: "Operations Director",
+    role: "CEO & Founder",
     background: "With over 20 years in international hospitality, Andrew leads the operational excellence and brand development of CDC Group.",
     image: "/images/andrew-portrait.png"
   },
@@ -63,7 +63,8 @@ export const OWNERS: Owner[] = [
   },
   {
     name: "Troy Trigwell",
-    role: "Creative Director",
-    background: "Troy brings a unique vision to the group, overseeing the aesthetic and conceptual development of every brand in the portfolio."
+    role: "Construction Manager",
+    background: "Oversees construction projects and leads menu concept design and development across the CDC Group, bridging the gap between physical space and culinary experience.",
+    image: "/images/troy-profile.jpg"
   }
 ];
