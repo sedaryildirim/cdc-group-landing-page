@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# CDC Group Landing Page
 
-# Run and deploy your AI Studio app
+A modern, responsive landing page for **CDC Group (Creative Design & Construction)**. This project showcases premium construction services, including architectural design, renovations, and commercial fit-outs, with a focus on luxury and high-quality craftsmanship.
 
-This contains everything you need to run your app locally.
+![License](https://img.shields.io/github/license/sedaryildirim/cdc-group-landing-page)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
-View your app in AI Studio: https://ai.studio/apps/ee8a069e-fc0c-472d-86cb-16962b41e0f8
+## 🌐 Live Demo
+View the live project here: [https://cdc-group-landing-page.pages.dev/](https://cdc-group-landing-page.pages.dev/)
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## ✨ Features
+* **Modern UI/UX:** Clean, professional design tailored for the construction and design industry.
+* **Fully Responsive:** Optimized for all devices, from mobile phones to large desktop screens.
+* **Service Showcases:** Detailed sections for New Builds, Loft Conversions, Renovations, and Commercial projects.
+* **Interactive Elements:** Smooth scrolling, hover effects, and a dynamic project gallery.
+* **Call to Action:** Optimized lead generation forms and contact sections.
+* **Fast Performance:** Built with modern web standards for rapid loading times.
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tech Stack
+* **Frontend Framework:** React.js / Next.js
+* **Styling:** Tailwind CSS
+* **Deployment:** Cloudflare Pages
+* **Icons & Assets:** Lucide React / Custom High-Resolution Assets
+
+---
+
+## 📂 Project Structure
+```text
+├── public/          # Static assets (images, icons, etc.)
+├── src/
+│   ├── components/  # Reusable UI components (Navbar, Footer, Buttons)
+│   ├── sections/    # Page sections (Hero, About, Services, Contact)
+│   ├── styles/      # Global CSS and Tailwind configurations
+│   └── App.js       # Main application entry point
+├── package.json     # Project dependencies and scripts
+└── tailwind.config.js
