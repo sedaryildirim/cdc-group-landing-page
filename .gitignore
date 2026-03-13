@@ -6,15 +6,3 @@ coverage/
 *.log
 .env*
 !.env.example
-
-# --- Asset Integrity & Protection Rules ---
-# Prevent modifications to specific digital asset types
-**/*.jpg
-**/*.png
-**/*.svg
-
-# Protect specific directories from version control sync
-/public/
-/public/images/
-/public/assets/
-/public/assets/images/
